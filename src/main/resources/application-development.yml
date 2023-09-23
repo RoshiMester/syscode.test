@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active-profiles:
+      - development
+  liquibase:
+    contexts: dev
+    change-log: classpath:/changelog/db.changelog-master.xml
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: always
+      platform: psql
+logging:
+  level:
+    root: INFO
+
+management:
+  server:
+    port: 48199
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    restart:
+      enabled: true
+  health:
+    db:
+      enabled: false
+server:
+  port: 8199
