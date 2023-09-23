@@ -60,7 +60,7 @@ public class ProfileController extends StudentExceptionHandler {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StudentListDto> pageableStudentList(Pageable pageable) {
-        logger.info("Get filtered student list - page: {}", pageable);
+        logger.info("Get student list - page: {}", pageable);
         return ResponseEntity.ok().body(profileService.getStudentListByFilter(pageable));
     }
 
