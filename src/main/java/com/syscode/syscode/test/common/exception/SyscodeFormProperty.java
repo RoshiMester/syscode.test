@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentFormProperty {
+public class SyscodeFormProperty {
     private String label;
     private String formProperty;
 

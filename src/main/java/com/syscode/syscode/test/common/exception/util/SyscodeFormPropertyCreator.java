@@ -1,21 +1,21 @@
 package com.syscode.syscode.test.common.exception.util;
 
-import com.syscode.syscode.test.common.exception.StudentFormProperty;
+import com.syscode.syscode.test.common.exception.SyscodeFormProperty;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StudentFormPropertyCreator {
+public class SyscodeFormPropertyCreator {
   private static final String EMPTY_STRING = "";
   private static final String SPACE = " ";
   private static final String DOT = ".";
   private static final String DOUBLE_DOT = ":";
   private static final String COMMA = ",";
 
-  private StudentFormPropertyCreator() {}
+  private SyscodeFormPropertyCreator() {}
 
-  public static List<StudentFormProperty> createPropertyFromErrorMsg(String msg) {
+  public static List<SyscodeFormProperty> createPropertyFromErrorMsg(String msg) {
     return (List)
         Stream.of(msg.replaceAll(" ", ""))
             .map(
@@ -29,13 +29,13 @@ public class StudentFormPropertyCreator {
                 })
             .map(
                 (splittedByDoubleDot) -> {
-                  return createStudentProperty(splittedByDoubleDot);
+                  return createSyscodeProperty(splittedByDoubleDot);
                 })
             .collect(Collectors.toList());
   }
 
-  private static StudentFormProperty createStudentProperty(String[] fullName) {
-    return new StudentFormProperty(fullName[1], getPropertyName(fullName[0]));
+  private static SyscodeFormProperty createSyscodeProperty(String[] fullName) {
+    return new SyscodeFormProperty(fullName[1], getPropertyName(fullName[0]));
   }
 
   private static String getPropertyName(String fullNameOfTheProperty) {

@@ -6,15 +6,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class StudentErrorObject {
+public class SyscodeErrorObject {
   public static final String LABEL = "label";
   private final List<Map> messages = new ArrayList();
 
-  public StudentErrorObject(String message) {
+  public SyscodeErrorObject(String message) {
     this.messages.add(Collections.singletonMap("label", message));
   }
 
-  public StudentErrorObject(List<String> messages) {
+  public SyscodeErrorObject(List<String> messages) {
     Iterator var2 = messages.iterator();
 
     while (var2.hasNext()) {

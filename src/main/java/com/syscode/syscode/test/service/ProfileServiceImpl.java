@@ -5,7 +5,7 @@ import com.syscode.syscode.test.common.dto.ResponseIdDto;
 import com.syscode.syscode.test.common.dto.StudentDto;
 import com.syscode.syscode.test.common.dto.StudentListDto;
 import com.syscode.syscode.test.common.dto.StudentPostDto;
-import com.syscode.syscode.test.common.exception.util.StudentExceptionUtils;
+import com.syscode.syscode.test.common.exception.util.SyscodeExceptionUtils;
 import com.syscode.syscode.test.common.util.JsonMapper;
 import com.syscode.syscode.test.domain.StudentEntity;
 import com.syscode.syscode.test.repository.ProfileRepository;
@@ -56,7 +56,7 @@ public class ProfileServiceImpl implements ProfileService {
   public ResponseIdDto updateStudentById(UUID id, StudentPostDto dto) {
     Optional<StudentEntity> student = profileRepository.findById(id);
     if (student == null) {
-      StudentExceptionUtils.throwNotFound(STUDENT_NOT_FOUND);
+      SyscodeExceptionUtils.throwNotFound(STUDENT_NOT_FOUND);
     }
     student.get().setEmail(dto.getEmail());
     student.get().setName(dto.getName());

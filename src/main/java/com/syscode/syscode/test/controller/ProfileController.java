@@ -3,7 +3,7 @@ package com.syscode.syscode.test.controller;
 import com.syscode.syscode.test.common.dto.ResponseIdDto;
 import com.syscode.syscode.test.common.dto.StudentListDto;
 import com.syscode.syscode.test.common.dto.StudentPostDto;
-import com.syscode.syscode.test.common.exception.handler.StudentExceptionHandler;
+import com.syscode.syscode.test.common.exception.handler.SyscodeExceptionHandler;
 import com.syscode.syscode.test.service.ProfileService;
 import jakarta.validation.Valid;
 import java.util.UUID;
@@ -32,7 +32,7 @@ import static com.syscode.syscode.test.common.constant.Constant.API_VERSION_PATH
 @RequestMapping(API_PATH + API_VERSION_PATH_V1 + API_PROFILE)
 @Validated
 @Timed
-public class ProfileController extends StudentExceptionHandler {
+public class ProfileController extends SyscodeExceptionHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(ProfileController.class);
 
