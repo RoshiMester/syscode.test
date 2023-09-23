@@ -2,7 +2,7 @@
     This project is a test to Syscode. This service represents a Spring ms.
 
 ## Used technologies and dependency
-    - Based on Java 117, Spring boot
+    - Based on Java 17, Spring boot
     - Use h2 db and liquibase 
     - Docker containers and image build
     - Swagger UI, JUnit5 
